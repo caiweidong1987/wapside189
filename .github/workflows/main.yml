@@ -1,0 +1,21 @@
+name: 自动任务
+
+on:
+  schedule:
+    - cron: "30 21 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上5点半自动执行
+  workflow_dispatch:
+
+env:
+  PHONE: ${{ secrets.PHONE }}
+  WEBHOOK_FEISHU: ${{ secrets.WEBHOOK_FEISHU }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: 执行脚本
+        run: node ncc/index.js

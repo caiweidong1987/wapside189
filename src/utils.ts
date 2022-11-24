@@ -16,4 +16,5 @@ export const getEncode = (data: Record<string, any>) => {
     )
     return Hex.stringify(Base64.parse(encrypted.toString()))
 }
+
 export const getUserAgent = (phone: string) => `CtClient;9.3.3;Android;10;MI 9;${Base64.parse(phone.substring(5, 11)).toString()}!#!${Base64.parse(phone.substring(0, 5)).toString()}`

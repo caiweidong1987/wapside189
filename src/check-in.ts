@@ -3,12 +3,13 @@ import * as service from "./services";
 import {message} from './message';
 
 export const checkIn = async () => {
+    const encode = getEncode({
+        phone: '17778018790',
+        date: +new Date,
+        "signSource": "smlprgrm"
+    })
     const {code, msg} = await service.sign({
-        encode: getEncode({
-            phone: '17778018790',
-            date: +new Date,
-            "signSource": "smlprgrm"
-        })
+        encode
     })
     if (code === 0) {
         message.error(`【签到】${msg}`)

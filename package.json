@@ -1,0 +1,36 @@
+{
+  "name": "wapside189",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "dev": "father build && node -r dotenv/config dist/cjs/index.js",
+    "test": "npm run build && node -r dotenv/config ncc/index.js",
+    "build": "father build && ncc build dist/cjs/index.js -m -o ncc",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "keywords": [],
+  "authors": [],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@vercel/ncc": "^0.34.0",
+    "dotenv": "^16.0.3",
+    "father": "^4.1.0"
+  },
+  "dependencies": {
+    "@hudiemon/webhook": "^0.0.5",
+    "axios": "^1.2.0",
+    "crypto-js": "^4.1.1",
+    "iconv-lite": "^0.6.3"
+  }
+}

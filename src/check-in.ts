@@ -1,10 +1,10 @@
-import {getEncode} from './utils';
+import {toEncode} from './utils';
 import * as service from "./services";
 import {message} from './message';
 
 export const checkIn = async () => {
     const {code, msg} = await service.sign({
-        encode:getEncode({
+        encode: toEncode({
             date: +new Date,
             signSource: "smlprgrm",
             phone: process.env.PHONE

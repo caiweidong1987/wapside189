@@ -1,7 +1,11 @@
 import {axios} from './axios';
+import {toPara} from './utils';
+
 
 export const taskQueue = async () => {
-    axios.post('/jt-sign/paradise/getTask', {
-        para:''
+    await axios.post('/jt-sign/paradise/getTask', {
+        para: toPara({phone: process.env.PHONE})
+    }).then((data)=>{
+        console.log(data)
     })
 }

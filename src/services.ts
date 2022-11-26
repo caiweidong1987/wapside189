@@ -2,9 +2,12 @@ import {axios} from './axios';
 
 /**
  * 签到
- * @param {object} data
- * @param {string} data.encode 时间戳与手机号加密后的字符
- * @returns {Promise<number>} code 0:成功
- * @returns {Promise<string>} msg
  */
-export const sign = (data: { encode: string }): Promise<{ code: number, msg: string }> => axios.post('/jt-sign/api/home/sign', data)
+export const sign = (data: { encode: string }): Promise<any> => axios.post('/jt-sign/api/home/sign', data)
+export const getTask = (data: { para: string }): Promise<any> => axios.post('/jt-sign/paradise/getTask', data)
+export const polymerize = (data: { para: string }): Promise<any> => axios.post('/jt-sign/paradise/polymerize', data)
+export const food = (data: { para: string }): Promise<any> => axios.post('/jt-sign/paradise/food', data)
+export const getParadiseInfo = (data: { para: string }): Promise<any> => axios.post('/jt-sign/paradise/getParadiseInfo', data)
+export const getLevelRightsList = (data: { para: string }): Promise<any> => axios.post('/jt-sign/paradise/getLevelRightsList', data)
+export const activityMsg = (data: { para: string }): Promise<any> => axios.post('/jt-sign/reward/activityMsg', data)
+export const convertReward = (data: { para: string }): Promise<any> => axios.post('/jt-sign/reward/convertReward', data)

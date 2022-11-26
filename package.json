@@ -24,16 +24,20 @@
   "devDependencies": {
     "@types/crypto-js": "4.1.1",
     "@types/node": "^18.11.9",
+    "@types/node-forge": "^1.3.1",
     "@types/node-rsa": "^1.1.1",
     "@vercel/ncc": "0.34.0",
     "dotenv": "16.0.3",
     "father": "4.1.0"
   },
   "dependencies": {
-    "@hudiemon/webhook": "0.0.5",
+    "@hudiemon/utils": "^0.0.1",
+    "@hudiemon/webhook": "0.0.6",
+    "await-to-js": "^3.0.0",
     "axios": "1.1.3",
     "crypto-js": "4.1.1",
     "jsencrypt": "3.2.1",
-    "node-rsa": "^1.1.1"
+    "lodash": "^4.17.21",
+    "node-forge": "^1.3.1"
   }
 }

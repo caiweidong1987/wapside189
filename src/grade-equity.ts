@@ -1,9 +1,7 @@
-import * as service from './services'
 import {toPara} from "./utils";
-import {message} from './message';
 
 export const gradeEquity = async () => {
-    const {userInfo} = await service.getParadiseInfo({para: toPara({phone: process.env.PHONE})})
+    const {userInfo} = await service.getParadiseInfo({para: toPara()})
     if (userInfo.paradiseDressup.level < 5) {
         message.warning(`【等级权益】当前${userInfo.paradiseDressup.level}级。小于5级，不领取等级权益`)
         return

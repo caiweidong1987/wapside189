@@ -1,7 +1,6 @@
 import axios from 'axios'
-import type {AxiosResponse} from 'axios'
 import {getUserAgent} from "./utils";
-
+import type {AxiosResponse} from 'axios'
 
 // axios
 export const request = axios.create({
@@ -10,6 +9,4 @@ export const request = axios.create({
         "User-Agent": getUserAgent(process.env.PHONE)
     }
 })
-request.interceptors.response.use((response: AxiosResponse) => {
-    return response.data
-})
+request.interceptors.response.use((response: AxiosResponse) => response.data)
